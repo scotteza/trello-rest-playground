@@ -1,5 +1,4 @@
 ﻿using System.Text.Json;
-using TrelloRestPlayground.Authorization;
 using TrelloRestPlayground.Http;
 
 namespace TrelloRestPlayground.Api.Boards;
@@ -16,10 +15,7 @@ public class TrelloBoardFetcher
 
     private string GetUrl()
     {
-        var token = new TrelloAuthorizer().GetToken();
-        var key = new TrelloAuthorizer().GetKey();
-        var url = $"https://api.trello.com/1/members/me/boards?key={key}&token={token}";
-        return url;
+        return new TrelloUrlBuilder().BuildUrl("members/me/boards");
     }
 
     private IEnumerable<TrelloBoard>? DeserializeHttpResponse(string responseBody)

@@ -7,7 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\TrelloRestPlayground.Authorization\TrelloRestPlayground.Authorization.csproj" />
     <ProjectReference Include="..\TrelloRestPlayground.Http\TrelloRestPlayground.Http.csproj" />
   </ItemGroup>
 

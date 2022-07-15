@@ -16,10 +16,7 @@ namespace TrelloRestPlayground.Api.Cards
 
         private string GetUrl(string listId)
         {
-            var token = new TrelloAuthorizer().GetToken();
-            var key = new TrelloAuthorizer().GetKey();
-            var url = $"https://api.trello.com/1/lists/{listId}/cards?key={key}&token={token}";
-            return url;
+            return new TrelloUrlBuilder().BuildUrl($"lists/{listId}/cards");
         }
 
         private IEnumerable<TrelloCard>? DeserializeHttpResponse(string responseBody)
