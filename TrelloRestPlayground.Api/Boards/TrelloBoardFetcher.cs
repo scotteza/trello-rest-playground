@@ -3,9 +3,9 @@ using TrelloRestPlayground.Authorization;
 
 namespace TrelloRestPlayground.Api.Boards;
 
-public class BoardFetcher
+public class TrelloBoardFetcher
 {
-    public async Task<IEnumerable<Board>?> FetchBoards()
+    public async Task<IEnumerable<TrelloBoard>?> FetchBoards()
     {
         var url = GetUrl();
         var responseBody = await GetHttpResponse(url);
@@ -30,10 +30,10 @@ public class BoardFetcher
         return responseBody;
     }
 
-    private IEnumerable<Board>? DeserializeHttpResponse(string responseBody)
+    private IEnumerable<TrelloBoard>? DeserializeHttpResponse(string responseBody)
     {
         var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
-        var result = JsonSerializer.Deserialize<Board[]>(responseBody, options);
+        var result = JsonSerializer.Deserialize<TrelloBoard[]>(responseBody, options);
         return result;
     }
 }
