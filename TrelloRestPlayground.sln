@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32616.157
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrelloRestPlayground.Console", "TrelloRestPlayground.Console\TrelloRestPlayground.Console.csproj", "{0B35E1DD-3C41-46FD-A4A4-B69227F57C79}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TrelloRestPlayground.Console", "TrelloRestPlayground.Console\TrelloRestPlayground.Console.csproj", "{0B35E1DD-3C41-46FD-A4A4-B69227F57C79}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrelloRestPlayground.Authorization", "TrelloRestPlayground.Authorization\TrelloRestPlayground.Authorization.csproj", "{27F5470B-DCEA-43A1-9FA2-261F3B54639E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{0B35E1DD-3C41-46FD-A4A4-B69227F57C79}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0B35E1DD-3C41-46FD-A4A4-B69227F57C79}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0B35E1DD-3C41-46FD-A4A4-B69227F57C79}.Release|Any CPU.Build.0 = Release|Any CPU
+		{27F5470B-DCEA-43A1-9FA2-261F3B54639E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27F5470B-DCEA-43A1-9FA2-261F3B54639E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27F5470B-DCEA-43A1-9FA2-261F3B54639E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27F5470B-DCEA-43A1-9FA2-261F3B54639E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
