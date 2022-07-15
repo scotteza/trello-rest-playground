@@ -1,11 +1,11 @@
 ﻿using System.Text.Json;
 using TrelloRestPlayground.Authorization;
 
-namespace TrelloRestPlayground.Api;
+namespace TrelloRestPlayground.Api.Boards;
 
-public class TrelloApi
+public class BoardFetcher
 {
-    public async Task<IEnumerable<TrelloBoard>?> FetchBoards()
+    public async Task<IEnumerable<Board>?> FetchBoards()
     {
         var url = GetUrl();
         var responseBody = await GetHttpResponse(url);
@@ -30,10 +30,10 @@ public class TrelloApi
         return responseBody;
     }
 
-    private IEnumerable<TrelloBoard>? DeserializeHttpResponse(string responseBody)
+    private IEnumerable<Board>? DeserializeHttpResponse(string responseBody)
     {
         var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
-        var result = JsonSerializer.Deserialize<TrelloBoard[]>(responseBody, options);
+        var result = JsonSerializer.Deserialize<Board[]>(responseBody, options);
         return result;
     }
 }

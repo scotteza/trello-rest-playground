@@ -1,6 +1,6 @@
-﻿namespace TrelloRestPlayground.Api;
+﻿namespace TrelloRestPlayground.Api.Boards;
 
-public class TrelloBoard
+public class Board
 {
     public string? Id { get; set; }
     public string? Name { get; set; }
