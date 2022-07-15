@@ -1,10 +1,13 @@
-﻿namespace TrelloRestPlayground
+﻿using TrelloRestPlayground.Api;
+
+namespace TrelloRestPlayground
 {
     internal class Program
     {
-        static void Main(string[] args)
+        static async Task Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            var trelloApi = new TrelloApi();
+            var boards = await trelloApi.FetchBoards();
         }
     }
 }
