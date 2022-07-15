@@ -1,4 +1,5 @@
 ﻿using TrelloRestPlayground.Api.Boards;
+using TrelloRestPlayground.Api.Cards;
 using TrelloRestPlayground.Api.Lists;
 
 namespace TrelloRestPlayground.Console
@@ -8,7 +9,8 @@ namespace TrelloRestPlayground.Console
         static async Task Main(string[] args)
         {
             var boardId = await GetBoardId();
-            var lists = await GetLists(boardId);
+            var listId = await GetLists(boardId);
+            var cardId = await GetCardsInList(listId);
         }
 
         private static async Task<string?> GetBoardId()
@@ -19,10 +21,20 @@ namespace TrelloRestPlayground.Console
             return boardId;
         }
 
-        private static async Task<IEnumerable<TrelloList>?> GetLists(string? boardId)
+        private static async Task<string> GetLists(string? boardId)
         {
-            var lists = await new TrelloListFetcher().FetchLists(boardId);
-            return lists;
+            var lists = await new TrelloListFetcher().FetchListsForBoard(boardId);
+            var list = lists!.First(x => x.Name!.Equals("AAAAA"));
+            var listId = list.Id;
+            return listId!;
+        }
+
+        private static async Task<string> GetCardsInList(string? listId)
+        {
+            var cards = await new TrelloCardFetcher().FetchCardsForList(listId);
+            var card = cards!.First();
+            var cardId = card.Id;
+            return cardId!;
         }
     }
 }
